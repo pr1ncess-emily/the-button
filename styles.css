@@ -1,0 +1,31 @@
+body {
+    background-color: #dbdbdb;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template: 10% 50% 10% 10% 20% / 10% 80% 10%;
+    align-items: center;
+    justify-items: center;
+}
+
+h1, h2, h3 {
+    color: #292929;
+    font-family: 'Press Start 2P';
+}
+
+header {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#redButton {
+    grid-area: 2 / 2 / 3 / 3;
+    align-self: flex-end;
+}
+
+#pressed {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+#money {
+    grid-area: 4 / 2 / 5 / 3;
+}

@@ -17,6 +17,9 @@
     <!-- Bungee Hairline 400 -->
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap" rel="stylesheet"> 
 
+    <!-- Meyer Web Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./styles.css" />
 
@@ -28,11 +31,15 @@
 </head>
 
 <body>
-    <h1>Press the button</h1>
-    <div style="display: flex; align-items: flex-end; height: 150px;">
-        <img id="redButton" src="./images/button.svg" style="width:200px;" />
-    </div>
-    <h2 id="timesPressed">Times Pressed: 0</h2>
-    <h3 id="moneyEarned">Money Earned: $0</h3>
+    <header>
+        <h1>Press the button</h1>
+    </header>
+    <img id="redButton" src="./images/button.svg" style="width:200px;" />
+    <span id="pressed">
+        <h2 id="timesPressed">Times Pressed: 0</h2>
+    </span>
+    <span id="money">
+        <h3 id="moneyEarned">Money Earned: $0</h3>
+    </span>
 </body>
 </html>
