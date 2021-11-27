@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Button</title>
+</head>
+
+<body>
+    <h1>Press the button</h1>
+    <div style="display: flex; align-items: flex-end; height: 150px;">
+        <img id="redButton" src="button.png" style="width:200px;" />
+    </div>
+    <h2 id="timesPressed">Times Pressed: 0</h2>
+    <h3 id="moneyEarned">Money Earned: $0</h3>
+</body>
+<script>
+    let timesButtonPressed = 0;
+    let money = 0;
+    let firstButtonPress = 1;
+    const redButton = () => {
+        return document.getElementById("redButton");
+    };
+    const getRandomChance = () => {
+        return Math.random();
+    }
+    const pressButton = () => {
+        timesButtonPressed += 1;
+        if (firstButtonPress) {
+            money = 100;
+            firstButtonPress = 0;
+        } else {
+            money *= 2;
+        }
+        document.getElementById("timesPressed").innerHTML = `Times Pressed: ${timesButtonPressed}`;
+        document.getElementById("moneyEarned").innerHTML = `Money Earned: $${money}`;
+        if (getRandomChance() >= 0.99) {
+            document.getElementById("timesPressed").innerHTML = "You died :("; 
+            document.getElementById("moneyEarned").innerHTML = `No money for you`;
+            timesButtonPressed = -1;
+        }
+    }
+    redButton().addEventListener("mousedown", () => {
+        if (timesButtonPressed < 0) {
+            return;
+        }
+        redButton().src = './buttonPressed.png';
+        pressButton();
+    });
+    redButton().addEventListener("mouseup", () => {
+        if (timesButtonPressed < 0) {
+            return;
+        }
+        redButton().src = "./button.png";
+    });
+</script>
+
+</html>
