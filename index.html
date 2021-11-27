@@ -11,7 +11,7 @@
 <body>
     <h1>Press the button</h1>
     <div style="display: flex; align-items: flex-end; height: 150px;">
-        <img id="redButton" src="button.png" style="width:200px;" />
+        <img id="redButton" src="./images/button.svg" style="width:200px;" />
     </div>
     <h2 id="timesPressed">Times Pressed: 0</h2>
     <h3 id="moneyEarned">Money Earned: $0</h3>
@@ -46,14 +46,14 @@
         if (timesButtonPressed < 0) {
             return;
         }
-        redButton().src = './buttonPressed.png';
+        redButton().src = './images/button-pressed.svg';
         pressButton();
     });
     redButton().addEventListener("mouseup", () => {
         if (timesButtonPressed < 0) {
             return;
         }
-        redButton().src = "./button.png";
+        redButton().src = "./images/button.svg";
     });
 </script>
 
