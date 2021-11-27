@@ -35,45 +35,4 @@
     <h2 id="timesPressed">Times Pressed: 0</h2>
     <h3 id="moneyEarned">Money Earned: $0</h3>
 </body>
-<script>
-    let timesButtonPressed = 0;
-    let money = 0;
-    let firstButtonPress = 1;
-    const redButton = () => {
-        return document.getElementById("redButton");
-    };
-    const getRandomChance = () => {
-        return Math.random();
-    }
-    const pressButton = () => {
-        timesButtonPressed += 1;
-        if (firstButtonPress) {
-            money = 100;
-            firstButtonPress = 0;
-        } else {
-            money *= 2;
-        }
-        document.getElementById("timesPressed").innerHTML = `Times Pressed: ${timesButtonPressed}`;
-        document.getElementById("moneyEarned").innerHTML = `Money Earned: $${money}`;
-        if (getRandomChance() >= 0.99) {
-            document.getElementById("timesPressed").innerHTML = "You died :("; 
-            document.getElementById("moneyEarned").innerHTML = `No money for you`;
-            timesButtonPressed = -1;
-        }
-    }
-    redButton().addEventListener("mousedown", () => {
-        if (timesButtonPressed < 0) {
-            return;
-        }
-        redButton().src = './images/button-pressed.svg';
-        pressButton();
-    });
-    redButton().addEventListener("mouseup", () => {
-        if (timesButtonPressed < 0) {
-            return;
-        }
-        redButton().src = "./images/button.svg";
-    });
-</script>
-
 </html>
